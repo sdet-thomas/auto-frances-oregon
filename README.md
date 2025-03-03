@@ -7,7 +7,7 @@ This project is a work in progress, scheduled for completion on March 9, 2025. a
 ## Important Considerations
 
 1. **Data Accuracy**: Users are responsible for ensuring all input data is correct and honest.
-2. **Legal Compliance**: The script should be used in accordance with Oregon's unemployment insurance regulations.
+2. **Legal Compliance**: The script should be used in accordance with State of Oregon Employment Department regulations.
 3. **Regular Updates**: Keep the script updated to maintain compatibility with any changes to the frances.oregon.gov website.
 
 ## Disclaimer
