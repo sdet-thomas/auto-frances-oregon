@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { username, password } from './config.ts';
 import { Job, loadJobsFromCsv } from '../utils/jobUtils';
 
-test('test', async ({ page }) => {
+test('file weekely claim', async ({ page }) => {
   await page.goto('https://frances.oregon.gov/Claimant/_/');
   await page.getByRole('textbox', { name: 'Username' }).click();
   await page.getByRole('textbox', { name: 'Username' }).fill(username);
@@ -57,7 +57,7 @@ test('test', async ({ page }) => {
   // Take a screenshot of the Direct Contacts page
   await page.waitForTimeout(1000);
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-  const screenshotPath = `Jobs_Direct_Contacts_${timestamp}.png`;
+  const screenshotPath = `test-results/Jobs_Direct_Contacts_${timestamp}.png`;
   await page.screenshot({ path: screenshotPath, fullPage: true });
   await page.getByRole('button', { name: ' Next' }).click();
 
