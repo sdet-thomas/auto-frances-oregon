@@ -36,7 +36,7 @@ npx playwright test --headed
 **Important Note:** During the multi-factor authentication step, the script will pause and wait for manual input. You will have a maximum of 2 minutes to complete this step before the script times out. Additionally, after the Job Search Direct Contacts are entered, the script will take a screenshot and pause for your review. It is essential to carefully verify all automated entries and manual inputs before proceeding. Please note that you must submit the claim manually yourself after completing the review.
 
 ### Test Results
-After running the script, a video recording and screenshoot will be saved in the test-results directory.
+After running the script, a video recording and screenshot will be saved in the test-results directory.
 
 ## Disclaimer
 
