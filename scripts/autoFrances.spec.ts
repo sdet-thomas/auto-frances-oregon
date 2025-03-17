@@ -39,7 +39,7 @@ test('file weekely claim', async ({ page }) => {
   await page.locator(`//legend[contains(text(), "${question8}")]/following-sibling::div//label[.//span[contains(text(), "Yes")]]`).click();
 
   // Load jobs from CSV - update the path if needed
-  const jobs = loadJobsFromCsv('../jobs.csv');
+  const jobs = loadJobsFromCsv('scripts/jobs.csv');
   for (const job of jobs) {
     await page.getByLabel('Direct Contacts').getByRole('link', { name: ' Add a Direct Contact' }).click();
     await page.getByRole('textbox', { name: 'Employer Name *' }).click();
