@@ -37,19 +37,19 @@ test('file weekely claim', async ({ page }) => {
 
   const question8 = "Did you actively look for work last week?"
   await page.locator(`//legend[contains(text(), "${question8}")]/following-sibling::div//label[.//span[contains(text(), "Yes")]]`).click();
-
+  await page.waitForTimeout(1000);
   // Load jobs from CSV - update the path if needed
   const jobs = loadJobsFromCsv('scripts/jobs.csv');
   for (const job of jobs) {
-    await page.getByLabel('Direct Contacts').getByRole('link', { name: ' Add a Direct Contact' }).click();
-    await page.getByRole('textbox', { name: 'Employer Name *' }).click();
-    await page.getByRole('textbox', { name: 'Employer Name *' }).fill(job['Employer Name']);
-    await page.getByRole('textbox', { name: 'Job Title *' }).click();
-    await page.getByRole('textbox', { name: 'Job Title *' }).fill(job['Job Title']);
-    await page.getByRole('textbox', { name: 'Location *' }).click();
-    await page.getByRole('textbox', { name: 'Location *' }).fill(job['Location']);
-    await page.getByRole('textbox', { name: 'Contact Date *' }).click();
-    await page.getByRole('textbox', { name: 'Contact Date *' }).fill(job['Contact Date']);
+    await page.getByLabel('Direct Contacts').locator('//a[contains(text(), "Add a Direct Contact")]').click();
+    await page.getByRole('textbox', { name: 'Employer Name' }).click();
+    await page.getByRole('textbox', { name: 'Employer Name' }).fill(job['Employer Name']);
+    await page.getByRole('textbox', { name: 'Job Title' }).click();
+    await page.getByRole('textbox', { name: 'Job Title' }).fill(job['Job Title']);
+    await page.getByRole('textbox', { name: 'Location' }).click();
+    await page.getByRole('textbox', { name: 'Location' }).fill(job['Location']);
+    await page.getByRole('textbox', { name: 'Contact Date' }).click();
+    await page.getByRole('textbox', { name: 'Contact Date' }).fill(job['Contact Date']);
     await page.getByLabel('Contact Method').selectOption(job['Contact Method']);
     await page.getByLabel('Results').selectOption(job['Results']);
     await page.getByRole('button', { name: 'Add' }).click();
